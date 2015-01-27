@@ -1,0 +1,45 @@
+<h1>Lesson 1</h1>
+
+<%= form_for :report, url: report_path(params[:report_id]), method: :patch do |f| %>
+	
+	Pre-Lesson Question 1<br>
+
+	<p>
+		<%= f.label :"Number of students who got Question 1 correct" %><br>
+		<%= f.number_field :pq1Score %>
+	</p>
+
+	Pre-Lesson Question 2<br>
+
+	<p>
+		<%= f.label :"Number of students who got Question 2 correct" %><br>
+		<%= f.number_field :pq2Score %>
+	</p>
+
+
+	Post-Lesson Question 1<br>
+
+	<p>
+		<%= f.label :"Number of students who got Question 1 correct" %><br>
+		<%= f.number_field :q1Score %>
+	</p>
+
+	Post-Lesson Question 2<br>
+
+	<p>
+		<%= f.label :"Number of students who got Question 2 correct" %><br>
+		<%= f.number_field :q2Score %>
+	</p>
+
+	Post-Lesson Question 3<br>
+
+	<p>
+		<%= f.label :"Number of students who got Question 3 correct" %><br>
+		<%= f.number_field :q3Score %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

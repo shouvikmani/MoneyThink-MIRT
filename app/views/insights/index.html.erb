@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!--jQuery file -->
+	    <script src="static/dist/js/jquery-1.11.1.min.js"></script>
+	    <!--Bootstrap core JS -->
+	    <script src="static/dist/js/bootstrap.min.js"></script>
+	    <!-- Bootstrap core CSS -->
+	    <link href="static/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <!-- Smooth Scroll Implementation -->
+	    <script type="text/javascript" src="js/smoothscroll.js"></script>
+	    <!--Custom Styles-->
+	    <title>MIRT</title>
+	    <!-- Fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,800|Changa+One' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="app/assets/stylesheets/insights.scss">
+	</head>
+	<body>
+		<h1>Insights - Table View</h1>
+		<table border="1" rules="none">
+			<tr>
+				<th>School</th>
+				<th>Date</th>
+				<th>Lesson</th>
+				<th>Attendance (%)</th>
+				<th>Pre-Question 1 Score (%)</th>
+				<th>Pre-Question 2 Score (%)</th>
+				<th>Post-Question 1 Score (%)</th>
+				<th>Post-Question 2 Score (%)</th>
+				<th>Post-Question 3 Score (%)</th>
+			</tr>
+			<% @reports.each do |report| %>
+			    <tr>
+			      <td class="school"><%= report.school.name %></td>
+			      <td class="date"><%= report.created_at.strftime("%b. %d") %></td>
+			      <td><%= report.lessonNum %></td>
+			      <td><%= (report.attendance.to_f / report.school.numStudents * 100).round %></td>
+			      <td><%= ((report.pq1Score.to_f / report.attendance) *100).round %></td>
+			      <td><%= ((report.pq2Score.to_f / report.attendance) *100).round %></td>
+			      <td><%= ((report.q1Score.to_f / report.attendance) *100).round %></td>
+			      <td><%= ((report.q2Score.to_f / report.attendance) *100).round %></td>
+			      <td><%= ((report.q3Score.to_f / report.attendance) *100).round %></td>
+			    </tr>
+			<% end %>
+		</table>
+	</body>
+</html>

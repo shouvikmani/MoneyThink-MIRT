@@ -1,0 +1,23 @@
+<h1>Report Data</h1>
+
+<%= form_for :report, url: reports_path do |f| %>
+	<p>
+		Select your mentoring site
+		<%= f.select :school, [['--Select your school--', nil], ['Westinghouse High School'], ['Barack Obama Academy'], ['Allderdice High School'], ['Foster Care'], ['The Bridge of Pittsburgh'], ['Urban Pathways'], ['Urban Pathways (Afterschool)'], ['Ward Home']] %>
+	<p>
+		Select your lesson
+		<%= f.select :lessonNum, [['Lesson 1: Why MoneyThink?', 1], ['Lesson 2: Mindful Spending', 2], ['Lesson 3: Goal Setting', 3], ['Lesson 4: Intro to the Banking System', 4], ['Lesson 5: Banking', 5], ['Lesson 6: Financial Product Basics', 6], ['Lesson 7: Banking Safety 101', 7], ['Lesson 8: Time Value of Money', 8], ['Lesson 9: Credit', 9], ['Lesson 10: Marketing Yourself', 10], ['Lesson 11: Resume Workshop', 11], ['Lesson 12: The World of Work', 12]] %>
+	</p>
+
+	</p>
+
+	<p>
+		<%= f.label :"Today's attendance" %>
+		<%= f.number_field :attendance %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

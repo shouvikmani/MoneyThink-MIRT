@@ -1,0 +1,32 @@
+// Place all the styles related to the insights controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+}
+
+table {
+	width: 90%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+th,td {
+    padding: 10px;
+}
+
+.school {
+	text-align: left;
+	width: 20%;
+}
+
+.date {
+	width: 8%;
+}
